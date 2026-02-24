@@ -8,9 +8,9 @@ import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-// Vérification admin (middleware simplifié)
+// Vérification admin (middleware simplifié) - CORRIGÉ AVEC AWAIT
 async function checkAdmin() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies(); // AJOUT DE AWAIT
   const isAdmin = cookieStore.get('admin_session');
   if (!isAdmin || isAdmin.value !== 'authenticated') {
     redirect('/admin/login');
@@ -103,7 +103,6 @@ export async function addVehicle(formData) {
     return { success: false, message: 'Erreur lors de l\'ajout: ' + error.message };
   }
 }
-
 
 // Mettre à jour un véhicule
 export async function updateVehicle(id, formData) {
@@ -200,8 +199,9 @@ export async function loginAdmin(formData) {
   }
 
   if (email === adminEmail && password === adminPassword) {
-    // Définir le cookie de session
-    cookies().set('admin_session', 'authenticated', {
+    // Définir le cookie de session - CORRIGÉ AVEC AWAIT
+    const cookieStore = await cookies(); // AJOUT DE AWAIT
+    cookieStore.set('admin_session', 'authenticated', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       maxAge: 60 * 60 * 24, // 24 heures
@@ -215,8 +215,9 @@ export async function loginAdmin(formData) {
   }
 }
 
-// Logout admin
+// Logout admin - CORRIGÉ AVEC AWAIT
 export async function logoutAdmin() {
-  cookies().delete('admin_session');
+  const cookieStore = await cookies(); // AJOUT DE AWAIT
+  cookieStore.delete('admin_session');
   redirect('/');
 }

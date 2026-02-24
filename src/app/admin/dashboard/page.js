@@ -7,9 +7,9 @@ import AdminVehicleActions from '@/components/AdminVehicleActions.jsx';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-// Vérification authentification
+// Vérification authentification - AJOUT DE ASYNC
 async function checkAuth() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies(); // AJOUT DE AWAIT
   const isAdmin = cookieStore.get('admin_session');
   
   if (!isAdmin || isAdmin.value !== 'authenticated') {
@@ -18,7 +18,7 @@ async function checkAuth() {
 }
 
 export default async function AdminDashboard() {
-  await checkAuth();
+  await checkAuth(); // Déjà bon car checkAuth est async
   const vehicles = await getVehicles();
 
   return (

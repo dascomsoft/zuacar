@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
       {/* Image de fond subtile */}
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
-          src="/images/carjordyno8.jpg"
+          src="/images/carjordyno11.jpg"
           alt=""
           fill
           className="object-cover blur-sm"
