@@ -1,6 +1,3 @@
-
-
-
 'use client';
 
 import { useState } from 'react';
@@ -21,7 +18,6 @@ export default function AdminVehicleActions({ vehicle }) {
       const result = await updateVehicle(id, formData);
       if (result.success) {
         alert('Véhicule modifié avec succès !');
-        // La page se recharge grâce à revalidatePath
       } else {
         alert('Erreur : ' + result.message);
       }
@@ -53,12 +49,12 @@ export default function AdminVehicleActions({ vehicle }) {
 
   return (
     <>
-      <div className="absolute top-2 right-2 flex gap-2">
+      <div className="absolute top-2 right-2 flex gap-2 z-10">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={handleEdit}
-          className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition"
+          className="bg-yellow-400 text-gray-900 p-2 rounded-full hover:bg-yellow-500 transition shadow-lg"
           title="Modifier"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +67,7 @@ export default function AdminVehicleActions({ vehicle }) {
           whileTap={{ scale: 0.9 }}
           onClick={handleDelete}
           disabled={isDeleting}
-          className={`bg-red-600 text-white p-2 rounded-full hover:bg-red-700 transition ${
+          className={`bg-red-600 text-white p-2 rounded-full hover:bg-red-700 transition shadow-lg ${
             isDeleting ? 'opacity-50 cursor-not-allowed' : ''
           }`}
           title="Supprimer"
@@ -82,7 +78,6 @@ export default function AdminVehicleActions({ vehicle }) {
         </motion.button>
       </div>
 
-      {/* Modal d'édition */}
       {isEditing && (
         <EditVehicleModal
           vehicle={vehicle}
