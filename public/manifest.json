@@ -1,21 +1,21 @@
 {
-  "name": "Jordyno Auto Rent",
-  "short_name": "Jordyno Rent",
-  "description": "Location de voitures avec chauffeur à Yaoundé",
+  "name": "Zua Car",
+  "short_name": "ZuaCar",
+  "description": "Location de véhicules avec chauffeur à Kinshasa",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#1e3a8a",
+  "background_color": "#000000",
+  "theme_color": "#FDBB02",
   "icons": [
     {
-      "src": "/icon-192x192.png",
+      "src": "/images/zuacarlogo.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpeg"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/images/zuacarlogo.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ]
 }
