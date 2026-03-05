@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+#  Zua Car - Site Web Professionnel
 
-First, run the development server:
+## **Contexte du Projet**
+Ce projet est un site web professionnel développé pour **Zua Car**, une entreprise de location de véhicules avec chauffeur basée à **Kinshasa, RDC**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Client**
+**Zua Car** est une entreprise spécialisée dans :
+- Location de véhicules avec chauffeur professionnel
+- Vente de voitures d'occasion
+- Transport de personnes et événements spéciaux
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 **Objectifs du Site**
+- Présenter la flotte de véhicules disponibles
+- Permettre aux clients de consulter les tarifs en USD
+- Faciliter les réservations via WhatsApp
+- Offrir une interface d'administration pour gérer la flotte
+- Refléter l'image professionnelle et moderne de l'entreprise
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+##  **Fonctionnalités Principales**
+- ✅ Catalogue de véhicules avec filtres par catégorie
+- ✅ Tarifs transparents en dollars américains ($)
+- ✅ Réservation directe par WhatsApp
+- ✅ Design moderne avec thème sombre et accents jaunes
+- ✅ Interface administrateur sécurisée
+- ✅ Base de données Turso pour la gestion des véhicules
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##  **Technologies Utilisées**
+- **Frontend** : Next.js 15, React, TailwindCSS, Framer Motion
+- **Backend** : Next.js Server Actions
+- **Base de données** : Turso (SQLite)
+- **Déploiement** : Vercel
+- **Authentification** : Cookies sécurisés
 
-## Learn More
+##  **Pages du Site**
+- **Accueil** : Présentation de l'entreprise et véhicules vedettes
+- **Flotte** : Catalogue complet des véhicules avec filtres
+- **Tarifs** : Grille tarifaire détaillée en USD
+- **Admin** : Interface de gestion (protégée par mot de passe)
 
-To learn more about Next.js, take a look at the following resources:
+##  **Accès Administrateur**
+- **URL** : `/admin/login`
+- **Email** : admin@zuacar.com
+- **Mot de passe** : (fourni au client)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌍 **Environnement**
+- **Production** : https://zuacar.vercel.app
+- **Local** : http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+##  **Développement**
+Projet développé par * Dascomsoft * pour Zua Car.
+Pour toute question technique, contacter le développeur.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 Zua Car - Tous droits réservés
