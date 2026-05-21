@@ -1908,9 +1908,11 @@ export async function getVehiclesAvailability(dateStr) {
 // =========================
 // CRÉATION RÉSERVATION AVEC TRANSACTION
 // =========================
-
 export async function createReservation(formData) {
   try {
+    // ========================
+    // RÉCUPÉRATION DES DONNÉES
+    // ========================
     const vehicleId = parseInt(formData.get('vehicle_id'));
     const customerName = formData.get('customer_name');
     const customerEmail = formData.get('customer_email');
@@ -1933,7 +1935,7 @@ export async function createReservation(formData) {
     }
 
     // ========================
-    // VALIDATION DES DATES
+    // VALIDATION DES DATES (CORRECTION FUSEAU HORAIRE)
     // ========================
     const start = new Date(pickupDate);
     const end = new Date(returnDate);
@@ -1942,7 +1944,11 @@ export async function createReservation(formData) {
       return { success: false, message: 'La date de retour doit être après la date de prise en charge' };
     }
     
-    if (start < new Date()) {
+    // Correction pour Vercel : éviter new Date() sans setHours
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (start < today) {
       return { success: false, message: 'La date de prise en charge ne peut pas être dans le passé' };
     }
 
@@ -2026,21 +2032,16 @@ export async function createReservation(formData) {
     revalidatePath('/admin/dashboard');
     revalidateTag('reservations');
 
+    // ========================
+    // RETOUR SIMPLIFIÉ POUR VERCELL
+    // ========================
+    // ⚠️ Éviter les objets complexes (dates, vehicle, etc.)
+    // pour que la sérialisation Server Action fonctionne sur Vercel
     return {
       success: true,
       message: 'Réservation créée avec succès ! Un email de confirmation vous a été envoyé.',
-      reservation: {
-        customerName,
-        customerEmail,
-        customerPhone,
-        vehicle: selectedVehicle,
-        pickupDate,
-        returnDate,
-        totalPrice,
-        pickupLocation,
-        dropoffLocation,
-        reservationId,
-      }
+      reservationId: reservationId,  // ← À LA RACINE
+      totalPrice: totalPrice,         // ← À LA RACINE
     };
     
   } catch (error) {

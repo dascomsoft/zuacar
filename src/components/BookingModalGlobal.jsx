@@ -362,21 +362,23 @@ if (result.success) {
   setMessage(result.message);
   
   // 🔥 REDIRECTION VERS PAGE DE PAIEMENT - VERSION CORRIGÉE
-  setTimeout(() => {
-    closeBooking();
-    
-    // Correction : l'ID est dans result.reservation.reservationId
-    const reservationId = result.reservation?.reservationId;
-    
-    console.log('🔍 Reservation ID trouvé:', reservationId);
-    
-    if (reservationId) {
-      window.location.href = `/payment?reservation_id=${reservationId}`;
-    } else {
-      console.error('Reservation ID introuvable:', result);
-      window.location.href = '/';
-    }
-  }, 2000);
+setTimeout(() => {
+  closeBooking();
+
+  // Maintenant l'ID est directement à la racine
+  const reservationId = result.reservationId;
+  const totalPrice = result.totalPrice;
+
+  console.log('🔍 Reservation ID trouvé:', reservationId);
+  console.log('🔍 Total price:', totalPrice);
+
+  if (reservationId) {
+    window.location.href = `/payment?reservation_id=${reservationId}`;
+  } else {
+    console.error('❌ Reservation ID introuvable:', result);
+    window.location.href = '/';
+  }
+}, 2000);
 }
     
     
