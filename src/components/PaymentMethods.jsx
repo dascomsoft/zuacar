@@ -67,9 +67,9 @@ export default function PaymentMethods({ reservationId }) {
 
   return (
     <div className="bg-zinc-900/80 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8">
-      <h2 className="text-2xl font-semibold mb-8 flex items-center gap-3">
+      <h3 className="text-2xl font-semibold mb-8 flex items-center gap-3">
         Options de Paiement Disponibles
-      </h2>
+      </h3>
 
       <div className="space-y-4">
         {paymentMethods.map((method, index) => (
