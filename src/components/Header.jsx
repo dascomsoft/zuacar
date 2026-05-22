@@ -269,6 +269,7 @@ export default function Header() {
   const navItems = [
     { name: 'Accueil', path: '/' },
     { name: 'Flotte', path: '/fleet' },
+    { name: 'Découverte', path: '/decouverte' },
     { name: 'Tarifs', path: '/pricing' },
     { name: 'Admin', path: '/admin/login' },
   ];
