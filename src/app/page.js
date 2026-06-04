@@ -163,9 +163,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
-              { initials: 'JD', name: 'Jean Dupont', date: '2025', text: 'Service impeccable ! Véhicule propre, chauffeur ponctuel et professionnel. Je recommande vivement.', bg: 'yellow' },
-              { initials: 'MA', name: 'Marie Atangana', date: '2026', text: 'Très satisfaite du service. La réservation via WhatsApp est super pratique et rapide.', bg: 'yellow' },
-              { initials: 'PN', name: 'Paul Nguema', date: '2025', text: 'Excellent rapport qualité-prix. Les véhicules sont modernes et bien entretenus. Je reviendrai !', bg: 'yellow' }
+              { initials: 'JD', name: 'Jean Dupont', date: '2022', text: 'Service impeccable ! Véhicule propre, chauffeur ponctuel et professionnel. Je recommande vivement.', bg: 'yellow' },
+              { initials: 'MA', name: 'Marie Lumumba', date: '2026', text: 'Très satisfaite du service. La réservation via WhatsApp est super pratique et rapide.', bg: 'yellow' },
+              { initials: 'PN', name: 'Paul Nguema', date: '2021', text: 'Excellent rapport qualité-prix. Les véhicules sont modernes et bien entretenus. Je reviendrai !', bg: 'yellow' }
             ].map((testimonial, index) => (
               <div key={index} className="bg-gray-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800">
                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
@@ -227,7 +227,7 @@ export default function HomePage() {
             </a>
           </div>
           <p className="mt-4 text-sm text-gray-400">
-            📍 Gombe – Avenue Lokele 02, près de la Gare Centrale, Kinshasa
+            📍 Av. Lokolela, C/Kinshasa , Kinshasa, Democratic Republic of the Congo
           </p>
         </div>
       </section>

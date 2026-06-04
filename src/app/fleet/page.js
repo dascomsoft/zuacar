@@ -27,10 +27,10 @@ function FleetLoading() {
 
 // Statistiques
 const stats = [
-  { label: 'Véhicules disponibles', value: '50+', icon: '🚗' },
-  { label: 'Modèles récents', value: '2026', icon: '✨' },
-  { label: 'Livraison gratuite', value: 'Kinshasa', icon: '📍' },
-  { label: 'Chauffeurs pros', value: '24/7', icon: '⭐' },
+  { label: 'Véhicules disponibles', value: '50+', icon: '' },
+  { label: 'Modèles récents', value: '2026', icon: '' },
+  { label: 'Livraison gratuite', value: 'Kinshasa', icon: '' },
+  { label: 'Chauffeurs pros', value: '24/7', icon: '' },
 ];
 
 // Composant asynchrone pour récupérer les données

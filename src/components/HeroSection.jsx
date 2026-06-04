@@ -197,10 +197,10 @@ export default function HeroSection() {
             className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-6 mt-8 sm:mt-12 px-2"
           >
             {[
-              { icon: '🛡️', text: 'Sécurité garantie' },
-              { icon: '👔', text: 'Chauffeurs en costume' },
-              { icon: '📍', text: 'Livraison gratuite' },
-              { icon: '✨', text: 'Véhicules luxe' },
+              { icon: '', text: 'Sécurité garantie' },
+              { icon: '', text: 'Chauffeurs en costume' },
+              { icon: '', text: 'Livraison gratuite' },
+              { icon: '', text: 'Véhicules luxe' },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -218,7 +218,7 @@ export default function HeroSection() {
             variants={fadeInUp}
             className="mt-6 sm:mt-8 text-xs sm:text-sm text-yellow-400/80 bg-black/40 backdrop-blur-sm inline-block px-4 py-2 rounded-full border border-yellow-400/20"
           >
-            📍 Gombe – Avenue Lokele 02, près de la Gare Centrale, Kinshasa
+            📍 Av. Lokolela, C/Kinshasa , Kinshasa, Democratic Republic of the Congo
           </motion.div>
         </motion.div>
       </div>
